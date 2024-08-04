@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  externaltariffapplication.server:
+    image: ${DOCKER_REGISTRY-}externaltariffapplicationserver
+    build:
+      context: .
+      dockerfile: ExternalTariffApplication.Server/Dockerfile

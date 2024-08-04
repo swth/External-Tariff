@@ -1,0 +1,1 @@
+E:\ASP.NET Applications\ExternalTariffApplication\externaltariffapplication.client\obj\Debug\externaltariffapplication.client.esproj.CoreCompileInputs.cache

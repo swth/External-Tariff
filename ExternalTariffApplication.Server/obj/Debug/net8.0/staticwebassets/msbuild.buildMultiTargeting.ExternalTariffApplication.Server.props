@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ExternalTariffApplication.Server.props" />
+</Project>

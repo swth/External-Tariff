@@ -1,12 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 
-interface Forecast {
-    date: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
-}
 
 //function App() {
 //    const [forecasts, setForecasts] = useState<Forecast[]>();
@@ -59,6 +53,7 @@ function App() {
     const [error, setError] = useState(null);
     const [, setIsLoaded] = useState(false);
     const [data, setData] = useState<any[]>([]);
+    const [val, setVal] = useState("");
 
     const showAllTariff = () => {
         if (document.getElementById('consumption') && (document.getElementById('consumption') as HTMLInputElement)?.value) {
@@ -96,13 +91,25 @@ function App() {
         }
     }
 
+    const handleKeyPress = (event: { key: string; preventDefault: () => void; }) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            showAllTariff();
+            setVal((document.getElementById('consumption') as HTMLInputElement).value);
+        }
+    };
+
     return (
         <div className="tariff-details">
             <form>
                 <div>
                     <h2>Tariff Comparison</h2>
                     <label>Enter the Consumption in (kWh/year): </label>
-                    <input type="text" placeholder="Enter Consumption.." id="consumption" />
+                    <input type="text" placeholder="Enter Consumption.." id="consumption" value={val}
+                        onChange={e => {
+                            setVal(e.target.value);
+                        }}
+                        onKeyDown={handleKeyPress} />
                 </div>
 
                 <button type="button" className='btn-primary' onClick={showAllTariff}>Show all Tariffs</button>

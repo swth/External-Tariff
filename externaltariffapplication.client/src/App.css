@@ -20,12 +20,6 @@ th, td {
 
 
 
-@media screen and (min-width:1024px) {
-    .tariff-details {
-        padding: 0 20em;
-    }
-}
-
 .tariff-details {
     padding-top: 50px;
     text-align: center;
@@ -40,17 +34,26 @@ th, td {
     margin: 30px;
 }
 
-@media screen and (min-width:1024px) {
-    ul {
-        padding-left: 8em;
-    }
-}
 
 ul {
     list-style-type: none;
     text-align: left;
 }
 
-    ul li:first-child {
-        font-weight: 700;
+@media screen and (min-width:768px) {
+    ul {
+        display: inline-block;
     }
+}
+
+@media screen and (max-width:767px) {
+
+    #consumption {
+        margin-top: 20px;
+    }
+}
+
+
+ul li:first-child {
+    font-weight: 700;
+}

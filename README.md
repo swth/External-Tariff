@@ -2,7 +2,7 @@
 
 **ASP.NET Core and React **
 
-This is the code repository for ASP.NET Core and React 
+This is the code repository for C# ASP.NET Core and React 
 
 Full-stack web development using .NET 8.0, React 18.3.1, and TypeScript 5.2.2
 
